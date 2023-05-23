@@ -7,10 +7,10 @@
         path = ./rust;
         description = "Rust Shell";
       };
-      # rust-hello = {
-      #   path = ./rust-hello-template;
-      #   description = "Simple Hello World in Rust";
-      # };
+      neovim = {
+        path = ./neovim;
+        description = "Neovim Nightly";
+      };
     };
   };
 }
