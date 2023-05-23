@@ -1,0 +1,12 @@
+#+title: README
+#+begin_src shell
+nix flake init -t github:hoidOS/nix#FLAKE
+#+end_src
+
+* FLAKES
+| FLAKE  | PKGS                               |
+|--------+------------------------------------|
+| emacs  | [emacsUnstable; emacsGit]          |
+| neovim | [neovim-nightly; neovim-unwrapped] |
+| rust   | [pkg-config; openssl]              |
+| ref    | [reference]                        |
