@@ -15,7 +15,7 @@
 
       # All the pkgs options
       pkgs = import nixpkgs-unstable {
-        allowUnfree = true;
+        config.allowUnfree = true;
         overlays = [ neovim ];
         inherit system;
       };
