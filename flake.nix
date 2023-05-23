@@ -11,6 +11,10 @@
         path = ./neovim;
         description = "Neovim Nightly";
       };
+      ref = {
+        path = ./ref;
+        description = "Reference Template";
+      };
       rust = {
         path = ./rust;
         description = "Rust Shell";
