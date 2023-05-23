@@ -8,5 +8,5 @@ nix flake init -t github:hoidOS/nix#FLAKE
 |--------+------------------------------------|
 | emacs  | [emacsUnstable; emacsGit]          |
 | neovim | [neovim-nightly; neovim-unwrapped] |
-| rust   | [pkg-config; openssl]              |
 | ref    | [reference]                        |
+| rust   | [pkg-config; openssl]              |
