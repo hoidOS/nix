@@ -3,13 +3,17 @@
 
   outputs = { self, ... }: {
     templates = {
-      rust = {
-        path = ./rust;
-        description = "Rust Shell";
+      emacs = {
+        path = ./emacs;
+        description = "Emacs Unstable";
       };
       neovim = {
         path = ./neovim;
         description = "Neovim Nightly";
+      };
+      rust = {
+        path = ./rust;
+        description = "Rust Shell";
       };
     };
   };
