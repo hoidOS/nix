@@ -23,7 +23,7 @@
     {
       devShells.${system}.default = pkgs.mkShell {
         packages = with pkgs; [
-          emacsUnstable # from the overlay. Check master flake for overlayAttrs
+          emacsUnstable # emacsUnstable or emacsGit for Master
         ];
       };
     };
