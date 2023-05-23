@@ -7,6 +7,10 @@
         path = ./emacs;
         description = "Emacs Unstable";
       };
+      install = {
+        path = ./install;
+        description = "Install Flake";
+      };
       neovim = {
         path = ./neovim;
         description = "Neovim Nightly";
