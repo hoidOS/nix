@@ -1,5 +1,5 @@
 {
-  description = "Nix Flake Reference";
+  description = "Nix Flake Install";
 
   inputs = {
     # Nixpkgs both channels
