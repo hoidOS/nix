@@ -4,10 +4,11 @@ nix flake init -t github:hoidOS/nix#FLAKE
 #+end_src
 
 * FLAKES
-| FLAKE  | PKGS                               |
-|--------+------------------------------------|
-| emacs  | [emacsUnstable; emacsGit]          |
-| install| [git; neovim; curl; lsd]           |
-| neovim | [neovim-nightly; neovim-unwrapped] |
-| ref    | [reference]                        |
-| rust   | [pkg-config; openssl]              |
+| FLAKE   | PKGS                               |
+|---------+------------------------------------|
+| c       | [stdenv]                           |
+| emacs   | [emacsUnstable; emacsGit]          |
+| install | [git; neovim; curl; lsd]           |
+| neovim  | [neovim-nightly; neovim-unwrapped] |
+| ref     | [reference]                        |
+| rust    | [pkg-config; openssl]              |
