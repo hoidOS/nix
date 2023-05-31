@@ -3,6 +3,10 @@
 
   outputs = { self, ... }: {
     templates = {
+      c = {
+        path = ./c;
+        description = "C Env";
+      };
       emacs = {
         path = ./emacs;
         description = "Emacs Unstable";
