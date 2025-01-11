@@ -1,19 +1,35 @@
 {
   inputs.nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
 
-  outputs = { self, nixpkgs, ... }:
+  outputs =
+    { self, nixpkgs, ... }:
     let
-      system = "x86_64-linux";
-      pkgs = import nixpkgs {
-        inherit system;
-      };
+      # Define systems for both Linux and Darwin (macOS)
+      systems = [
+        "x86_64-linux"
+        "aarch64-darwin"
+        "x86_64-darwin"
+      ];
+
+      # Helper function for each system
+      forAllSystems =
+        f:
+        nixpkgs.lib.genAttrs systems (
+          system:
+          f {
+            pkgs = import nixpkgs { inherit system; };
+          }
+        );
+
     in
     {
-      packages.${system} = {
-        # Call default.nix
-        myPackage = pkgs.callPackage ./. { };
-        default = self.packages.${system}.myPackage;
-      };
+      packages = forAllSystems (
+        { pkgs, ... }:
+        {
+          # Call default.nix for each system
+          myPackage = pkgs.callPackage ./. { };
+          default = self.packages.${pkgs.system}.myPackage;
+        }
+      );
     };
 }
-

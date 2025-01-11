@@ -1,5 +1,8 @@
-{ stdenv
-, ...
+{
+  stdenv,
+  lib,
+  fetchurl,
+  darwin,
 }:
 
 stdenv.mkDerivation {
@@ -8,11 +11,16 @@ stdenv.mkDerivation {
 
   src = ./src;
 
+  # Use a cross-platform build tool like make or directly use cc-wrapper which handles both gcc and clang
+  nativeBuildInputs = lib.optionals stdenv.isDarwin [
+    darwin.cctools # Provides ar, ld, etc. for macOS
+    darwin.apple_sdk.frameworks.CoreFoundation # If needed for some macOS stuff
+  ];
+
   buildPhase = ''
-    gcc -c main.c
-    gcc main.o -o main
-    # ls -la
-    # exit 1
+    # Use $CC instead of hardcoding gcc or clang
+    $CC -c main.c
+    $CC main.o -o main
   '';
 
   installPhase = ''
@@ -20,4 +28,3 @@ stdenv.mkDerivation {
     mv main $out/bin/myPackage
   '';
 }
-
