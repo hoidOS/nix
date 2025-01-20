@@ -19,8 +19,8 @@ stdenv.mkDerivation {
 
   buildPhase = ''
     # Use $CC instead of hardcoding gcc or clang
-    $CC -c main.c
-    $CC main.o -o main
+    $CC -std=c99 -Wall -Werror -c main.c
+    $CC -std=c99 -Wall -Werror main.o -o main
   '';
 
   installPhase = ''
