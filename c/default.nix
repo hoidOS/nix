@@ -1,7 +1,7 @@
 {
   stdenv,
   lib,
-  fetchurl,
+  # fetchurl,
   darwin,
 }:
 
