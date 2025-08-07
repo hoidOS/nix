@@ -32,6 +32,8 @@
               openssl.dev # For crypto-related gems
               zlib.dev # For compression gems
               libxml2.dev # For XML parsing gems like nokogiri
+              libxslt.dev
+              libffi.dev
               # Add more as needed, e.g., postgresql for DB
             ];
             shellHook = ''
